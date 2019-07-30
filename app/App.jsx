@@ -16,12 +16,11 @@ const HelloWorld2 = importedComponent(() => import('./HelloWorld2'));
 export default function App() {
   return (
     <div>
-      <Helmet defaultTitle="Joel Aguero">
+      <Helmet defaultTitle="Matt and Joel's Wedding">
         <meta charSet="utf-8" />
       </Helmet>
       <Switch>
         <Route exact path="/" component={Landing} />
-        <Route exact path="/codeSplit" component={HelloWorld2} />
         <Redirect to="/" />
       </Switch>
     </div>

@@ -17,10 +17,12 @@
     "build-client": "cross-env BABEL_ENV=client parcel build app/index.html -d dist/client --public-url /dist",
     "build-server": "cross-env BABEL_ENV=server parcel build server/index.js -d dist/server --public-url /dist --target=node6",
     "generate-imported-component": "imported-components app app/imported.js",
-    "start": "node dist/server"
+    "start": "yarn build && node dist/server"
   },
   "dependencies": {
     "antd": "^3.20.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "cheerio": "^1.0.0-rc.2",
     "compression": "^1.7.2",
     "express": "^4.16.2",
@@ -31,8 +33,8 @@
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "babel-eslint": "^8.2.2",
-    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-eslint": "^10.0.2",
+    "babel-plugin-dynamic-import-node": "^2.3.0",
     "cross-env": "^5.1.3",
     "eslint": "^4.19.0",
     "eslint-plugin-import": "^2.9.0",
