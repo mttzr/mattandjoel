@@ -4,6 +4,6 @@
       {
           "polyfill": false,
           "regenerator": true
-      }]
-  ]
+      }],
+  ],
 }

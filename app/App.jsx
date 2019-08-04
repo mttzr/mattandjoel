@@ -4,25 +4,34 @@
 
 import './App.less';
 
+import { CLIENT_ID, SPREADSHEET_ID } from './constants';
+import React, { Component } from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
 
 import { Helmet } from 'react-helmet';
 import Landing from './scenes/landing/Landing';
-import React from 'react';
-import importedComponent from 'react-imported-component';
 
-const HelloWorld2 = importedComponent(() => import('./HelloWorld2'));
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      sheetLoaded: false,
+    }
+  }
 
-export default function App() {
-  return (
-    <div>
-      <Helmet defaultTitle="Matt and Joel's Wedding">
-        <meta charSet="utf-8" />
-      </Helmet>
-      <Switch>
-        <Route exact path="/" component={Landing} />
-        <Redirect to="/" />
-      </Switch>
-    </div>
-  );
+  render() {
+    return (
+      <div>
+        <Helmet defaultTitle="Matt and Joel's Wedding">
+          <meta charSet="utf-8" />
+        </Helmet>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Redirect to="/" />
+        </Switch>
+      </div>
+    );
+  }
 }
+
+export default App;
